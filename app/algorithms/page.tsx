@@ -8,8 +8,14 @@ export const metadata: Metadata = {
   // other metadata
 };
 
+
+
 // Card component
-const Card = ({ title, imageSrc, href }) => (
+const Card = ({ title, imageSrc, href }: {
+  title: string;
+  imageSrc: string;
+  href: string;
+}) => (
   <Link href={href} passHref>
     <div className="max-w-lg rounded overflow-hidden shadow-lg transition duration-300 transform hover:scale-105">
       {imageSrc && (
