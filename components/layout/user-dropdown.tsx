@@ -1,4 +1,4 @@
-"use client";
+/**"use client";
 
 import { useState } from "react";
 import { signOut } from "next-auth/react";
@@ -62,4 +62,4 @@ export default function UserDropdown({ session }: { session: Session }) {
       </Popover>
     </div>
   );
-}
+}**/
