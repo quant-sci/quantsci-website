@@ -215,6 +215,28 @@ const features = [
     ),
   },
   {
+    title: "Graph Transformers",
+    button: (
+      <a
+        href="/gt"
+        className="inline-block rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+      >
+        Explore
+      </a>
+    ),
+    demo: (
+      <a href={DEPLOY_URL}>
+        <Image
+          src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg495FZQZ12yMiNhU8C7XUKEJ88H5_v2PPrzhwcDOVnSaVEtdCXaL7py-LzwZZkybKwIaePLHKpdmD6qALfskdjeaA8ML9QYHMwWkxz2ZnhWYqoV1PpnNgbRRfm0pSVYJVrtUpONyyF5PfswJ_QoxD-9vI9F3rF6VQbIRDDIbgvOFc35vTEF9uxizKNpli9/s320/image1.gif"
+          alt="graph transformers"
+          width={220}
+          height={30}
+          unoptimized
+        />
+      </a>
+    ),
+  },
+  {
     title: "Tools and Resources",
     button: (
       <a
