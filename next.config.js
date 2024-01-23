@@ -4,13 +4,13 @@ const nextConfig = {
   swcMinify: true,
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
-    domains: ["lh3.googleusercontent.com", "vercel.com"],
+    domains: ["graphnet.kleytondacosta.com"],
   },
   async redirects() {
     return [
       {
         source: "/github",
-        destination: "https://github.com/steven-tey/precedent",
+        destination: "https://github.com/kleyt0n/graphnet",
         permanent: false,
       },
     ];

@@ -10,7 +10,7 @@ export const metadata = {
   title: "graphnet",
   description:
     "A collection of graph visualizations and algorithms in Python",
-  metadataBase: new URL("https://precedent.dev"),
+  metadataBase: new URL("https://graphnet.kleytondacosta.com"),
   themeColor: "black",
 };
 
