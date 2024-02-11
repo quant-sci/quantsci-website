@@ -1,39 +1,20 @@
-import Link from "next/link"
+"use client"
 
-import { env } from "@/env.mjs"
+import Link from "next/link"
+import { useState } from 'react'; 
+
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 
-async function getGitHubStars(): Promise<string | null> {
-  try {
-    const response = await fetch(
-      "https://api.github.com/repos/kleyt0n/graphnet",
-      {
-        headers: {
-          Accept: "application/vnd.github+json",
-          Authorization: `Bearer ${env.GITHUB_ACCESS_TOKEN}`,
-        },
-        next: {
-          revalidate: 60,
-        },
-      }
-    )
 
-    if (!response?.ok) {
-      return null
-    }
-
-    const json = await response.json()
-
-    return parseInt(json["stargazers_count"]).toLocaleString()
-  } catch (error) {
-    return null
-  }
-}
-
-export default async function IndexPage() {
-  const stars = await getGitHubStars()
+const IndexPage = () => { // Changed to an arrow function 
+  const [isOpen, setIsOpen] = useState(false);
+  const latexCitation = `@misc{quantsci2024,
+    author = {Costa, Kleyton and Modenesi, Bernardo},
+    title = {Quantitative methods for science and engineering},
+    year = {2024},
+    url = {https://quantsci.org}}`;
 
   return (
     <>
@@ -55,17 +36,35 @@ export default async function IndexPage() {
 
           </p>
           <div className="space-x-4">
-            <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
+            <Link href="/contributors" className={cn(buttonVariants({ size: "lg" }))}>
               Contributors
             </Link>
             <Link
               href={siteConfig.links.github}
               target="_blank"
               rel="noreferrer"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
+              className={cn(buttonVariants({size: "lg" }))}
             >
               GitHub
             </Link>
+            <button 
+            className={cn(buttonVariants({ size: "lg" }))} // Adjust styling as needed
+            onClick={() => setIsOpen(!isOpen)}
+            >
+                  Cite this Project
+            </button>
+
+            {/* Modal */}
+            {isOpen && (
+              <div className="modal"> 
+                <div className="modal-content">
+                  <span className="close-button" onClick={() => setIsOpen(false)}>
+                    &times;
+                  </span>
+                  <pre>{latexCitation}</pre> 
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
@@ -158,4 +157,6 @@ export default async function IndexPage() {
       </section>
     </>
   )
-}
+};
+
+export default IndexPage;

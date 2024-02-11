@@ -79,3 +79,16 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
+
+.contributor-card {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;     /* Center image and text horizontally */
+  text-align: center;      /* Center the name and description */
+  border: rounded-lg p-6; /* Re-adding the original styles  */
+}
+
+.image-container { /* Optional: If you want more control over image-specific centering */
+  display: flex;
+  justify-content: center; 
+}
