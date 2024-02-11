@@ -1,4 +1,4 @@
-import Link from "next/link"
+/**import Link from "next/link"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
@@ -67,3 +67,4 @@ export default function PricingPage() {
     </section>
   )
 }
+*/

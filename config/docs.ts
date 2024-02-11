@@ -3,7 +3,7 @@ import { DocsConfig } from "types"
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
-      title: "Documentation",
+      title: "Explore",
       href: "/docs",
     },
     {
@@ -22,113 +22,47 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "Documentation",
+      title: "graphnet",
       items: [
         {
           title: "Introduction",
-          href: "/docs/documentation",
+          href: "/docs/graphnet",
         },
         {
-          title: "Contentlayer",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Algorithms",
+          href: "/docs/graphnet/algorithms",
         },
         {
-          title: "Components",
-          href: "/docs/documentation/components",
+          title: "Models",
+          href: "/docs/graphnet/models",
         },
         {
-          title: "Code Blocks",
-          href: "/docs/documentation/code-blocks",
+          title: "Analysis",
+          href: "/docs/graphnet/analysis",
         },
         {
-          title: "Style Guide",
-          href: "/docs/documentation/style-guide",
+          title: "Graph Neural Networks",
+          href: "/docs/graphnet/gnn",
         },
         {
-          title: "Search",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Blog",
-      items: [
-        {
-          title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Temporal GNN",
+          href: "/docs/graphnet/tgn",
         },
         {
-          title: "Build your own",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Graph Transformers",
+          href: "/docs/graphnet/transformers",
         },
         {
-          title: "Writing Posts",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Dashboard",
-      items: [
-        {
-          title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Theorems and Proofs",
+          href: "/docs/graphnet/theorems",
         },
         {
-          title: "Layouts",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Real Worlds Examples",
+          href: "/docs/graphnet/examples",
         },
         {
-          title: "Server Components",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Authentication",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Database with Prisma",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "API Routes",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-      ],
-    },
-    {
-      title: "Marketing Site",
-      items: [
-        {
-          title: "Introduction",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "File Structure",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Tailwind CSS",
-          href: "/docs/in-progress",
-          disabled: true,
-        },
-        {
-          title: "Typography",
-          href: "/docs/in-progress",
-          disabled: true,
+          title: "Tools",
+          href: "/docs/graphnet/tools",
         },
       ],
     },
