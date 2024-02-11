@@ -1,37 +1,94 @@
-import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
-import cx from "classnames";
-import { sfPro, inter } from "./fonts";
-import Nav from "@/components/layout/nav";
-import Footer from "@/components/layout/footer";
-import { Suspense } from "react";
+import { Inter as FontSans } from "next/font/google"
+import localFont from "next/font/local"
+
+import "@/styles/globals.css"
+import { siteConfig } from "@/config/site"
+import { absoluteUrl, cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/toaster"
+import { Analytics } from "@/components/analytics"
+import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { ThemeProvider } from "@/components/theme-provider"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+// Font files can be colocated inside of `pages`
+const fontHeading = localFont({
+  src: "../assets/fonts/CalSans-SemiBold.woff2",
+  variable: "--font-heading",
+})
+
+interface RootLayoutProps {
+  children: React.ReactNode
+}
 
 export const metadata = {
-  title: "graphnet",
-  description:
-    "A collection of graph visualizations and algorithms in Python",
-  metadataBase: new URL("https://graphnet.kleytondacosta.com"),
-  themeColor: "black",
-};
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Server Components",
+    "Radix UI",
+  ],
+  authors: [
+    {
+      name: "shadcn",
+      url: "https://shadcn.com",
+    },
+  ],
+  creator: "shadcn",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [`${siteConfig.url}/og.jpg`],
+    creator: "@shadcn",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: `${siteConfig.url}/site.webmanifest`,
+}
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-indigo-50 via-white to-bg-black-50" />
-        <Suspense fallback="...">
-          <Nav />
-        </Suspense>
-        <main className="flex min-h-screen w-full flex-col items-center justify-center py-32">
+    <html lang="en" suppressHydrationWarning>
+      <head />
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
-        </main>
-        <Footer />
-        <Analytics />
+          <Analytics />
+          <Toaster />
+          <TailwindIndicator />
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
