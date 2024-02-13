@@ -1,18 +1,23 @@
-import { MarketingConfig } from "types"
+import { MarketingConfig } from "types";
+import { siteConfig } from "@/config/site";
 
 export const marketingConfig: MarketingConfig = {
   mainNav: [
     {
-      title: "Contributors",
-      href: "/contributors",
+      title: "Explore",
+      href: "/docs",
     },
     {
       title: "Blog",
       href: "/blog",
     },
     {
-      title: "Explore",
-      href: "/docs",
+      title: "Contributors",
+      href: "/contributors",
+    },
+    {
+      title: "GitHub",
+      href: "https://github.com/quant-sci",
     },
   ],
 }

@@ -22,7 +22,7 @@ export const docsConfig: DocsConfig = {
       ],
     },
     {
-      title: "graphnet",
+      title: "Graphnet",
       items: [
         {
           title: "Introduction",
@@ -45,14 +45,6 @@ export const docsConfig: DocsConfig = {
           href: "/docs/graphnet/gnn",
         },
         {
-          title: "Temporal GNN",
-          href: "/docs/graphnet/tgn",
-        },
-        {
-          title: "Graph Transformers",
-          href: "/docs/graphnet/transformers",
-        },
-        {
           title: "Theorems and Proofs",
           href: "/docs/graphnet/theorems",
         },
@@ -65,6 +57,24 @@ export const docsConfig: DocsConfig = {
           href: "/docs/graphnet/tools",
         },
       ],
+    },
+    {
+      title: "Responsible AI",
+      items: [
+        {
+          title: "Introduction",
+          href: "/docs/responsibleai",
+        },
+      ],
+    },
+    {
+    title: "Causal Inference in ML",
+    items: [
+      {
+        title: "Introduction",
+        href: "/docs/causalml",
+      },
+    ],
     },
   ],
 }

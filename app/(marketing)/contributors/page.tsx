@@ -11,7 +11,7 @@ export const metadata = {
 import Image from 'next/image'; // Assuming you'll use the Next.js Image component
 
 export default function ContributorsPage() {
-  const contributors = [
+  const coreContributors = [
     {
       name: 'Kleyton da Costa',
       photo: '/images/avatars/kleytondacosta.webp',
@@ -27,19 +27,28 @@ export default function ContributorsPage() {
     // Add more contributors as needed
   ];
 
+  const devContributors = [
+    {
+      name: '',
+      photo: '',
+      description: '',
+      link: '',
+    },
+  ];
+
   return (
     <section className="container flex flex-col gap-6 py-8 md:max-w-[64rem] md:py-12 lg:py-24">
       <div className="mx-auto flex w-full flex-col gap-4 md:max-w-[58rem]">
-        <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Our Contributors
+        <h2 className="font-heading text-2xl leading-[1.1] sm:text-2xl md:text-3xl">
+          Core Contributors
         </h2>
         <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          Meet the individuals who make this project possible.
+          Meet the core contributors of the quantsci project.
         </p>
       </div>
 
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {contributors.map((contributor) => (
+        {coreContributors.map((contributor) => (
           <div key={contributor.name} className="contributor-card">
             <div className="image-container mb-4"> 
               <Image
@@ -50,16 +59,16 @@ export default function ContributorsPage() {
                 className="rounded-full" 
               />
             </div>
+            <Link href={contributor.link}>
             <h3 className="text-xl font-bold">{contributor.name}</h3>
+            </Link>
             <p className="text-muted-foreground">{contributor.description}</p>
             <div className="space-x-4">
-            <Link href={contributor.link} className={cn(buttonVariants({ size: "sm" }))}>
-              Website
-            </Link>
             </div>
+          
           </div>
         ))}
       </div>
-    </section>
+  </section>
   );
 }
