@@ -31,7 +31,7 @@ const IndexPage = () => { // Changed to an arrow function
             Quantitative methods for science and engineering
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            quantsci is a open-source project that provides a set of tools for
+            quantsci is a open-source project that provides a set of tools and guides for
             quantitative methods in science and engineering.
 
           </p>
